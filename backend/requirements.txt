@@ -3,3 +3,4 @@ tensorflow
 numpy
 werkzeug==2.2.2
 flask_cors
+pillow
