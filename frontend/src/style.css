@@ -1,0 +1,202 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f1f8ff; /* Soft pastel blue for a cute look */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 16px;
+}
+
+.App {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  text-align: center;
+  transition: background-color 0.3s ease; /* Smooth transition for background change */
+}
+
+/* Header styles */
+h1 {
+  font-size: 2.5rem; /* Increased for better visibility */
+  color: #7c4dff;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 1px;  /* Adds slight letter spacing for a modern look */
+  text-transform: uppercase; /* Makes the text all caps */
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #555; /* Slightly lighter shade for the subtitle */
+  font-weight: 300; /* Lighter font weight for a nice contrast */
+  margin-bottom: 30px; /* Adds margin to separate from other elements */
+  font-style: italic; /* Adds a bit of emphasis */
+}
+
+/* File input button styling */
+input[type="file"] {
+  display: none;
+}
+
+.upload-label {
+  background-color: #7c4dff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.upload-label:hover {
+  background-color: #5e35b1;
+}
+
+button[type="submit"],
+button {
+  background-color: #7c4dff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:disabled {
+  background-color: #ccc;
+}
+
+button[type="submit"]:not(:disabled):hover,
+button:hover {
+  background-color: #5e35b1;
+}
+
+/* Back to Start button */
+.back-to-start {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-start:hover {
+  background-color: #999;
+}
+
+/* Loading spinner style */
+.loading {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+/* Skin tone result */
+h2 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #333;
+}
+
+/* Select box styling */
+select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease;
+}
+
+select:focus {
+  border-color: #7c4dff;
+  outline: none;
+}
+
+/* Styling for the product recommendations */
+h2 + div {
+  margin-top: 30px;
+}
+
+div p {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 10px 0;
+}
+
+/* Step transition effects */
+form, select, button {
+  transition: opacity 0.5s ease;
+}
+
+form input[type="file"]:focus {
+  outline: none;
+}
+
+/* Recommendations Styling */
+.recommendations-container {
+  margin-top: 30px;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.recommendation-card {
+  background-color: #fafafa;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for hover effect */
+}
+
+.recommendation-card:hover {
+  transform: scale(1.05); /* Slightly enlarges the card */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Darker and more prominent shadow */
+}
+
+.recommendation-card p {
+  margin: 5px 0;
+  color: #333;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 500px) {
+  .App {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  button[type="submit"],
+  button {
+    padding: 10px 16px;
+  }
+}
