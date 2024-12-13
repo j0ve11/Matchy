@@ -12,8 +12,8 @@ logging.basicConfig(level=logging.INFO)
 
 app = Flask(__name__)
 
-# Configure CORS to allow all origins (or specify your frontend URL)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+# Configure CORS
+CORS(app, resources={r"/api/*": {"origins": "http://localhost:5173"}})
 
 # Logging configuration
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
