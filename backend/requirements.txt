@@ -1,5 +1,5 @@
 Flask==2.2.2
 tensorflow
-flask_cors
 numpy
 werkzeug==2.2.2
+flask_cors
