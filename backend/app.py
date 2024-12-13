@@ -12,8 +12,8 @@ logging.basicConfig(level=logging.INFO)
 
 app = Flask(__name__)
 
-# Configure CORS
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:5173"}})
+# Configure CORS to allow all origins (or specify your frontend URL)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Logging configuration
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -115,5 +115,6 @@ def recommendations():
     except Exception as e:
         logging.exception("Error processing recommendations")
         return jsonify({'error': 'An internal error occurred.'}), 500
+    
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
