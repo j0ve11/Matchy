@@ -10,6 +10,12 @@ const App = () => {
     const [selectedBrand, setSelectedBrand] = useState(""); // Holds the selected brand
     const [recommendations, setRecommendations] = useState([]); // Stores product recommendations
 
+    // Set the backend URL dynamically based on the environment
+    const backendUrl =
+        process.env.NODE_ENV === 'production'
+            ? 'https://your-backend-name.vercel.app/api' // Replace this with your actual deployed backend URL
+            : 'http://localhost:5000/api'; // Local development URL
+
     // Handle image change
     const handleImageChange = (event) => {
         const file = event.target.files[0];
@@ -33,7 +39,7 @@ const App = () => {
         formData.append('file', image);
 
         try {
-            const response = await axios.post('http://localhost:5000/api/classify', formData, {
+            const response = await axios.post(`${backendUrl}/classify`, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
 
@@ -73,7 +79,7 @@ const App = () => {
             }
 
             // Send the correct data to the backend for recommendations
-            const response = await axios.post('http://localhost:5000/api/recommendations', {
+            const response = await axios.post(`${backendUrl}/recommendations`, {
                 skin_tone: result.skin_tone,
                 brand: selectedBrand,
             });

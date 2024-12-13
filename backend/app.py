@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO)
 app = Flask(__name__)
 
 # Configure CORS
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:5174"}})
+CORS(app, resources={r"/api/*": {"origins": "*"}})  # Allow all origins
 
 # Logging configuration
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -27,12 +27,14 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Load the pre-trained model
+model_path = os.path.join(os.getcwd(), 'skin_tone_model.h5')
 try:
-    model = load_model('skin_tone_model.h5')
+    model = load_model(model_path)
     logging.info("Skin tone model loaded successfully.")
 except Exception as e:
     logging.error(f"Failed to load model: {e}")
     raise e
+
 
 # Define skin tone classes
 skin_tone_classes = ['dark', 'light', 'lighten', 'mid dark', 'mid light', 'mid-dark', 'mid-light']
