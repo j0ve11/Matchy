@@ -1,12 +1,17 @@
-import react from '@vitejs/plugin-react';
-
 // vite.config.js
 
+import react from '@vitejs/plugin-react';
+
 export default {
+  plugins: [react()],
+
   server: {
-    open: true, // Automatically open the browser
-    host: 'localhost', // Default is 'localhost'
-    port: 5173, // Default port for Vite
+    open: true,
+    host: 'localhost',
+    port: 5174,
+  },
+
+  build: {
+    outDir: 'dist',
   },
 };
-

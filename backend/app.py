@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO)
 app = Flask(__name__)
 
 # Configure CORS
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:5173"}})
+CORS(app, resources={r"/api/*": {"origins": "http://localhost:5174"}})
 
 # Logging configuration
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
